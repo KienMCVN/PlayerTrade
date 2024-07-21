@@ -1,0 +1,10 @@
+name: PlayerTrade
+main: KienDev\Trade\Main
+api: 5.0.0
+version: 0.0.1
+author:
+- KienDev
+description: This Plugin Allows Players To Trade Item With Each Other
+permissions:
+  trade.cmd:
+    default: true
