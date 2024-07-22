@@ -19,6 +19,6 @@ PlayerTrade For Pocketmine-MP
 | `/trade` | `Trade With Other Players` | *`trade.cmd`* |
 
 ## Contact
-[![DISCORD](https://img.shields.io/badge/ClickedTran_VN-white?logo=discord&logoColor=white&label=Discord&labelColor=blue&color=yellow)](https://discord.com/invite/R4J7cnh4)
-[![YOUTUBE](https://img.shields.io/badge/ClickedTran_VN-white?logo=youtube&logoColor=red&label=Youtube&labelColor=white&color=blue)](http://www.youtube.com/@KienMCGaming)
-[![FACEBOOK](https://img.shields.io/badge/Ph%C3%A1t_Tr%E1%BA%A7n-blue?logo=facebook&logoColor=white&label=Facebook&labelColor=blue&color=g)](https://www.facebook.com/profile.php?id=100068614539939)
+[![DISCORD]()](https://discord.com/invite/R4J7cnh4)
+[![YOUTUBE](https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg)](http://www.youtube.com/@KienMCGaming)
+[![FACEBOOK](https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg)](https://www.facebook.com/profile.php?id=100068614539939)
