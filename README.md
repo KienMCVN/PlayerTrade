@@ -17,8 +17,3 @@ PlayerTrade For Pocketmine-MP
 | **COMMAND** | **DESCRIPTION** | **PERMISSION** |
 | --- | --- | --- |
 | `/trade` | `Trade With Other Players` | *`trade.cmd`* |
-
-## Contact
-[![DISCORD]()](https://discord.com/invite/R4J7cnh4)
-[![YOUTUBE](https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg)](http://www.youtube.com/@KienMCGaming)
-[![FACEBOOK](https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg)](https://www.facebook.com/profile.php?id=100068614539939)
