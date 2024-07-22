@@ -78,18 +78,20 @@ class TradeCMD extends Command implements PluginOwned{
         $sender->sendMessage("Your Request Was Sent Successfully, Wait For 30s");
         $target->sendMessage($sender->getName() . " Has Sent You A Request. Use /trade accept To Accept Or /trade deny To Deny");
         $scheduler=$this->plugin->getScheduler();
-        $scheduler->scheduleDelayedTask(new class($requestId, $this) extends Task{
+        $scheduler->scheduleDelayedTask(new class($requestId, $this, $this->plugin) extends Task{
             private $requestId;
-            private $plugin;
+            private $tradecmd;
+	    private $plugin;
 
-            public function __construct(string $requestId, TradeCMD $plugin) {
+            public function __construct(string $requestId, TradeCMD $tradecmd, Main $plugin) {
                 $this->requestId = $requestId;
-                $this->plugin = $plugin;
+                $this->tradecmd = $tradecmd;
+		$this->plugin = $plugin;
             }
 
             public function onRun(): void {
-                if (isset($this->plugin->requests[$this->requestId])) {
-                    unset($this->plugin->requests[$this->requestId]);
+                if (isset($this->tradecmd->requests[$this->requestId])) {
+                    unset($this->tradecmd->requests[$this->requestId]);
                     $target = $this->plugin->getServer()->getPlayerExact($this->plugin->requests[$this->requestId]["target"]);
                     if ($target instanceof Player) {
                         $target->sendMessage("The Request Has Expired");
