@@ -1,5 +1,5 @@
 ## General
-![image](https://github.com/KienMCVN/PlayerTrade/blob/main/trade.png)
+<img src="https://github.com/KienMCVN/PlayerTrade/blob/main/trade.png" width="128" height="128">
 <br>
 PlayerTrade For Pocketmine-MP
 
