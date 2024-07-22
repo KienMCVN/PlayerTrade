@@ -1,15 +1,12 @@
-# PlayerTrade
-## Plugin PlayerTrade For Pocketmine-MP 5
-
-## Info Plugin
-<ul>
-  <li>Plugin Was Coded By KienDev</li>
-  <li>Plugin Works In Pocketmine-MP 5</li>
-</ul>
+## General
+![image](https://github.com/KienMCVN/PlayerTrade/blob/main/trade.png)
+<br>
+PlayerTrade For Pocketmine-MP
 
 ## Feature
 <ul>
   <li>This Plugin Allows Players To Trade Item With Each Other</li>
+  <li>This Plugin Trade Like Minecraft Java Server</li>
 </ul>
 
 ## Credits / Virions Used
@@ -17,13 +14,8 @@
 - [DEVirion](https://github.com/poggit/devirion) (SOF3)
 
 ## Commands
-<ul>
-  <li>/trade 'player' To Send A Request</li>
-  <li>/trade accept To Accept A Request</li>
-  <li>/trade deny To Deny A Request</li>
-</ul>
+| **COMMAND** | **DESCRIPTION** | **PERMISSION** |
+| --- | --- | --- |
+| `/trade` | `Trade With Other Players` | *`trade.cmd`* |
 
-## Permission
-<ul>
-  <li>trade.cmd To Use All Commands</li>
-</ul>
+
