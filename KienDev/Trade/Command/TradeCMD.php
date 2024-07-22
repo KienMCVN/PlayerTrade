@@ -21,6 +21,7 @@ use pocketmine\data\bedrock\EnchantmentIdMap;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\{Item, ItemBlock, StringToItemParser, LegacyStringToItemParser, LegacyStringToItemParserException};
+use pocketmine\inventory\Inventory;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\transaction\{InvMenuTransaction,InvMenuTransactionResult};
 use muqsit\invmenu\type\InvMenuTypeIds;
@@ -140,6 +141,9 @@ class TradeCMD extends Command implements PluginOwned{
 		$menu->setListener(function (InvMenuTransaction $transaction) use ($player, $sender, $trade) {
 			return $this->menuTradeListener($transaction, $player, $sender, $trade);
 		});
+		$menu->setInventoryCloseListener(function (Player $p, Inventory $inventory) use ($player, $sender, $trade){
+			return $this->tradeCloseListener($p, $inventory, $player, $sender, $trade);
+		});
 		$inv=$menu->getInventory();
 		$itemsSlotArray=[4,13,22,31,40,45,46,47,48,49,50,51,52,53];
 		foreach($itemsSlotArray as $slot){
@@ -163,6 +167,35 @@ class TradeCMD extends Command implements PluginOwned{
 		}
 		$menu->send($player);
 		$menu->send($sender);
+	}
+
+	public function tradeCloseListener(Player $p, Inventory $inventory, Player $player, Player $sender, TradeManager $trade){
+		$playerItems=[];
+        $senderItems=[];
+		for($slott=0;$slott<=44;$slott++){
+			$item=$inventory->getItem($slott);
+			if($item!==null){
+				if(in_array($slott,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
+					$playerItems[]=$item;
+				}
+				if(in_array($slott,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
+					$senderItems[]=$item;
+				}
+			}
+		}
+		if($p->getName()==$player->getName()){
+			if($sender->getCurrentWindow()==null) return;
+			$sender->sendMessage($player->getName()." Denied The Trade");
+			$p->sendMessage("You Denied The Trade");
+			$sender->removeCurrentWindow($inventory);
+			$trade->returnItem($playerItems,$senderItems);
+		}else{
+			if($player->getCurrentWindow()==null) return;
+			$player->sendMessage($sender->getName()." Denied The Trade");
+			$p->sendMessage("You Denied The Trade");
+			$player->removeCurrentWindow($inventory);
+			$trade->returnItem($playerItems,$senderItems);
+		}
 	}
 
 	public function menuTradeListener(InvMenuTransaction $transaction, Player $player, Player $sender, TradeManager $trade){
