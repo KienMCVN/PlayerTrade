@@ -187,13 +187,13 @@ class TradeCMD extends Command implements PluginOwned{
 			if($sender->getCurrentWindow()==null) return;
 			$sender->sendMessage($player->getName()." Denied The Trade");
 			$p->sendMessage("You Denied The Trade");
-			$sender->removeCurrentWindow($inventory);
+			$sender->removeCurrentWindow();
 			$trade->returnItem($playerItems,$senderItems);
 		}else{
 			if($player->getCurrentWindow()==null) return;
 			$player->sendMessage($sender->getName()." Denied The Trade");
 			$p->sendMessage("You Denied The Trade");
-			$player->removeCurrentWindow($inventory);
+			$player->removeCurrentWindow();
 			$trade->returnItem($playerItems,$senderItems);
 		}
 	}
@@ -230,15 +230,15 @@ class TradeCMD extends Command implements PluginOwned{
 				}else{
 					$p->sendMessage("Please Wait");
 				}
-				$p->removeCurrentWindow($inv);
+				$p->removeCurrentWindow();
 				return $transaction->discard();
         	}
         	if($itemClicked->getName()=="§cDeny"){
 				$sender->sendMessage($player->getName()." Denied The Trade");
 				$p->sendMessage("You Denied The Trade");
-				$sender->removeCurrentWindow($inv);
+				$sender->removeCurrentWindow();
 				$trade->returnItem($playerItems,$senderItems);
-				$p->removeCurrentWindow($inv);
+				$p->removeCurrentWindow();
 				return $transaction->discard();
 			}
 			if(in_array($slot,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
@@ -260,15 +260,15 @@ class TradeCMD extends Command implements PluginOwned{
 				}else{
 					$p->sendMessage("Please Wait");
 				}
-				$p->removeCurrentWindow($inv);
+				$p->removeCurrentWindow();
 				return $transaction->discard();
         	}
         	if($itemClicked->getName()=="§cDeny"){
 				$player->sendMessage($sender->getName()." Denied The Trade");
 				$p->sendMessage("You Denied The Trade");
-				$player->removeCurrentWindow($inv);
+				$player->removeCurrentWindow();
 				$trade->returnItem($playerItems,$senderItems);
-				$p->removeCurrentWindow($inv);
+				$p->removeCurrentWindow();
 				return $transaction->discard();
 			}
 			if(in_array($slot,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
