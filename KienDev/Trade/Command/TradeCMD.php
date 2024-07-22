@@ -185,7 +185,6 @@ class TradeCMD extends Command implements PluginOwned{
         		}
     		}
 		}
-		$p->sendMessage($slot);
         if($p->getName()==$player->getName()){
         	if($itemClicked->getName()=="§aAccept"){
         		$trade->setPlayerTrade(true);
@@ -209,10 +208,10 @@ class TradeCMD extends Command implements PluginOwned{
 				$p->removeCurrentWindow($inv);
 				return $transaction->discard();
 			}
-			if(in_array($slot,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
+			if(in_array($slot,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
 				return $transaction->continue();
 			}
-        	if(!in_array($slot,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
+        	if(!in_array($slot,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
         		$this->plugin->sendSound($p, "mob.horse.angry");
         		return $transaction->discard();
         	}
@@ -239,14 +238,14 @@ class TradeCMD extends Command implements PluginOwned{
 				$p->removeCurrentWindow($inv);
 				return $transaction->discard();
 			}
-			if(in_array($slot,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
+			if(in_array($slot,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
 				return $transaction->continue();
 			}
-        	if(!in_array($slot,[5,6,7,8,14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44])){
+        	if(!in_array($slot,[0,1,2,3,9,10,11,12,18,19,20,21,27,28,29,30,36,37,38,39])){
         		$this->plugin->sendSound($p, "mob.horse.angry");
         		return $transaction->discard();
         	}
         }
-        return $transaction->continue();
+        return $transaction->discard();
     }
 }
