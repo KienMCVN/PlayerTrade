@@ -23,6 +23,7 @@ use pocketmine\data\bedrock\EnchantmentIdMap;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\item\enchantment\ItemFlags;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
+use pocketmine\math\Vector3;
 use KienDev\Trade\Command\TradeCMD;
 
 class Main extends PluginBase implements Listener{
@@ -60,7 +61,7 @@ class Main extends PluginBase implements Listener{
 			foreach($items as $item){
 				if(!$player->getInventory()->canAddItem($item)){
 					$pos=new Vector3($player->getPosition()->getX(), $player->getPosition()->getY(), $player->getPosition()->getZ());
-					$player->getPostion()->getWorld()->dropItem($pos,$item);
+					$player->getPosition()->getWorld()->dropItem($pos,$item);
 					continue;
 				}else{
 					$player->getInventory()->addItem($item);
