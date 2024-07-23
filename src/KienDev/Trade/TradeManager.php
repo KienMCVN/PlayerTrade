@@ -24,8 +24,8 @@ final class TradeManager{
 	private Player $player;
 	private Player $sender;
 	private Main $plugin;
-	public bool $playerTrade=false;
-	public bool $senderTrade=false;
+	public $playerTrade = null;
+	public $senderTrade = null;
 
 	public function __construct(Player $player, Player $sender, Main $plugin){
 		$this->plugin=$plugin;
@@ -41,11 +41,11 @@ final class TradeManager{
 		$this->senderTrade=$data;
 	}
 
-	public function getPlayerTrade(): bool{
+	public function getPlayerTrade(): ?bool{
 		return $this->playerTrade;
 	}
 
-	public function getSenderTrade(): bool{
+	public function getSenderTrade(): ?bool{
 		return $this->senderTrade;
 	}
 
