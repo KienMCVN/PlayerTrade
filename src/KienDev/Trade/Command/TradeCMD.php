@@ -189,6 +189,7 @@ class TradeCMD extends Command implements PluginOwned{
 				}
 			}
 		}
+		if($trade->getPlayerTrade()!==null || $trade->getSenderTrade()!==null) return;
 		if($p->getName()==$player->getName()){
 			if($sender->getCurrentWindow()==null) return;
 			$sender->sendMessage($player->getName()." Denied The Trade");
@@ -235,11 +236,14 @@ class TradeCMD extends Command implements PluginOwned{
 					$this->plugin->sendSound($sender, "random.levelup");
 				}else{
 					$p->sendMessage("Please Wait");
+					$sender->sendMessage($p->getName()." Accepted The Trade");
 				}
 				$p->removeCurrentWindow();
 				return $transaction->discard();
         	}
         	if($itemClicked->getName()=="§cDeny"){
+        		$trade->setPlayerTrade(false);
+        		$trade->setSenderTrade(false);
 				$sender->sendMessage($player->getName()." Denied The Trade");
 				$p->sendMessage("You Denied The Trade");
 				$sender->removeCurrentWindow();
@@ -265,11 +269,14 @@ class TradeCMD extends Command implements PluginOwned{
 					$this->plugin->sendSound($sender, "random.levelup");
 				}else{
 					$p->sendMessage("Please Wait");
+					$player->sendMessage($p->getName()." Accepted The Trade");
 				}
 				$p->removeCurrentWindow();
 				return $transaction->discard();
         	}
         	if($itemClicked->getName()=="§cDeny"){
+        		$trade->setPlayerTrade(false);
+        		$trade->setSenderTrade(false);
 				$player->sendMessage($sender->getName()." Denied The Trade");
 				$p->sendMessage("You Denied The Trade");
 				$player->removeCurrentWindow();
