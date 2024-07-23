@@ -53,13 +53,17 @@ class TradeCMD extends Command implements PluginOwned{
 			return;
 		}
 		if($args[0]==="accept"){
-            $this->acceptRequest($player);
-            return;
-        }
-        if ($args[0]==="deny") {
-            $this->denyRequest($player);
-            return;
-        }
+	            $this->acceptRequest($player);
+	            return;
+	        }
+	        if ($args[0]==="deny") {
+	            $this->denyRequest($player);
+	            return;
+	        }
+		if($args[0]==$player->getName()){
+	        	$player->sendMessage("You Can't Send A Request Yourself");
+	        	return;
+	        }
 		if(!$this->plugin->getServer()->getPlayerByPrefix($args[0])){
 			$player->sendMessage("Player Isn't Online");
 			return;
