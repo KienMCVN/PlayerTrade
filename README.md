@@ -16,4 +16,4 @@ PlayerTrade For Pocketmine-MP
 ## Commands
 | **COMMAND** | **DESCRIPTION** | **PERMISSION** | **ALIASES** |
 | --- | --- | --- | --- |
-| `/trade` | `Trade With Other Players` | *`trade.cmd`* | `/ptrade` |
+| `/trade` | `Trade With Other Players` | *`trade.cmd`* | `/ptrade, /trade` |
