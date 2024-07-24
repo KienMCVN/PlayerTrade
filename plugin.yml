@@ -1,6 +1,6 @@
 name: PlayerTrade
 main: KienDev\Trade\Main
-api: 5.0.0
+api: 5.13.0
 version: 1.0.0
 author:
 - KienDev
