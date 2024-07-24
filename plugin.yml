@@ -7,5 +7,5 @@ author:
 description: This Plugin Allows Players To Trade Item With Each Other
 virions: ["InvMenu"]
 permissions:
-  trade.cmd:
+  playertrade.command:
     default: true
