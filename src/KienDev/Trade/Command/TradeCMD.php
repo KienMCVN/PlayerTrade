@@ -39,7 +39,7 @@ class TradeCMD extends Command implements PluginOwned{
 	
 	 public function __construct(Main $plugin){
 		$this->plugin=$plugin;
-		parent::__construct("trade", "Trade With Other Players", null, []);
+		parent::__construct("playertrade", "Trade With Other Players", null, ["ptrade","trade"]);
 		$this->setPermission("playertrade.command");
 	}
 
