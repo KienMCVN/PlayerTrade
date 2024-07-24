@@ -30,19 +30,11 @@ class Main extends PluginBase implements Listener{
 
 	public const FAKE_ENCHANTMENT = -1;
 
-	/**public static $instance;
-	
-	public static function getInstance(): Main{
-		return self::$instance;
-	}**/
-
 	public function onEnable(): void{
 		EnchantmentIdMap::getInstance()->register(self::FAKE_ENCHANTMENT, new Enchantment("", -1, 1, ItemFlags::ALL, ItemFlags::NONE));
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
 		$this->getServer()->getCommandMap()->register("/trade", new TradeCMD($this));
-		/**self::$instance = $this;**/
-		$this->getLogger()->notice("Plugin PlayerTrade By KienDev Is On Enable");
 	}
 
 	public function sendSound(Player $player, string $soundName) {
