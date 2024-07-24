@@ -14,6 +14,6 @@ PlayerTrade For Pocketmine-MP
 - [DEVirion](https://github.com/poggit/devirion) (SOF3)
 
 ## Commands
-| **COMMAND** | **DESCRIPTION** | **PERMISSION** |
-| --- | --- | --- |
-| `/trade` | `Trade With Other Players` | *`trade.cmd`* |
+| **COMMAND** | **DESCRIPTION** | **PERMISSION** | **ALIASES** |
+| --- | --- | --- | --- |
+| `/trade` | `Trade With Other Players` | *`trade.cmd`* | `/ptrade` |
