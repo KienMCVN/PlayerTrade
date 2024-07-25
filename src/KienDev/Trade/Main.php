@@ -34,7 +34,7 @@ class Main extends PluginBase implements Listener{
 		EnchantmentIdMap::getInstance()->register(self::FAKE_ENCHANTMENT, new Enchantment("", -1, 1, ItemFlags::ALL, ItemFlags::NONE));
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
-		$this->getServer()->getCommandMap()->register("/playertrade", new TradeCMD($this));
+		$this->getServer()->getCommandMap()->register("playertrade", new TradeCMD($this));
 	}
 
 	public function sendSound(Player $player, string $soundName) {
